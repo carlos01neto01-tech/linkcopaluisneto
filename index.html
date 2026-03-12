@@ -3,546 +3,582 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Formulário de inscrição da Copa Luiz Neto de Futsal." />
-  <title>Copa Luiz Neto de Futsal</title>
+  <title>Copa Luiz Neto de Futsal 2025</title>
   <style>
-    :root {
-      --green: #1f8d56;
-      --green-dark: #12653d;
-      --green-soft: #eaf7ef;
-      --blue: #202b7a;
-      --blue-soft: #eef1ff;
-      --text: #1c2430;
-      --muted: #657083;
-      --border: #dbe3ea;
-      --bg: #f5f7fa;
-      --white: #ffffff;
-      --danger: #c0362c;
-      --shadow: 0 18px 45px rgba(21, 36, 61, 0.08);
-      --radius: 22px;
-      --radius-sm: 14px;
-      --max: 1120px;
+    :root{
+      --bg:#eef2f5;
+      --card:#ffffff;
+      --text:#0f2747;
+      --muted:#5f6f84;
+      --line:#d8e0e8;
+      --green:#1f8a4c;
+      --green-dark:#16693a;
+      --blue:#2f3fa3;
+      --shadow:0 14px 40px rgba(17, 39, 71, 0.08);
+      --radius:24px;
+      --max:1180px;
     }
 
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
       font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
       color: var(--text);
-      background: linear-gradient(180deg, #eff7f2 0%, var(--bg) 30%, #eef3f8 100%);
-      line-height: 1.55;
+      line-height:1.5;
     }
 
-    img { max-width: 100%; display: block; }
-    a { color: inherit; }
-
-    .container {
-      width: min(calc(100% - 32px), var(--max));
-      margin: 0 auto;
+    img{
+      max-width:100%;
+      display:block;
     }
 
-    .hero { padding: 24px 0 0; }
-
-    .banner {
-      overflow: hidden;
-      border-radius: 24px;
-      box-shadow: var(--shadow);
-      background: var(--white);
+    .page{
+      width:100%;
     }
 
-    .banner img {
-      width: 100%;
-      height: auto;
-      object-fit: cover;
+    .hero{
+      width:100%;
+      background:#dfe6dc;
     }
 
-    .top-card {
-      margin-top: -6px;
-      background: linear-gradient(135deg, var(--green) 0%, var(--green-dark) 100%);
-      color: var(--white);
-      border-radius: 0 0 24px 24px;
-      padding: 28px;
-      box-shadow: var(--shadow);
+    .hero picture,
+    .hero img{
+      width:100%;
+      display:block;
     }
 
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: rgba(255,255,255,0.16);
-      border: 1px solid rgba(255,255,255,0.22);
-      border-radius: 999px;
-      padding: 8px 14px;
-      font-size: 0.92rem;
-      margin-bottom: 14px;
+    .container{
+      width:min(100% - 32px, var(--max));
+      margin:24px auto 0;
     }
 
-    h1, h2, h3 { margin: 0 0 12px; line-height: 1.15; }
-    h1 { font-size: clamp(1.8rem, 4vw, 3rem); }
-    h2 { font-size: clamp(1.35rem, 2.4vw, 2rem); }
-    h3 { font-size: 1.15rem; }
-
-    .lead {
-      font-size: 1.04rem;
-      max-width: 900px;
-      margin: 0;
-      opacity: 0.98;
+    .grid{
+      display:grid;
+      grid-template-columns:minmax(0, 1.15fr) minmax(300px, 0.85fr);
+      gap:22px;
+      align-items:start;
     }
 
-    .warning-box {
-      margin-top: 18px;
-      display: grid;
-      gap: 10px;
-      background: rgba(255,255,255,0.12);
-      border: 1px solid rgba(255,255,255,0.18);
-      border-radius: var(--radius-sm);
-      padding: 18px;
+    .card{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
     }
 
-    .warning-box strong { display: block; }
-    .main { padding: 28px 0 56px; }
-
-    .grid {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 24px;
-      align-items: start;
+    .form-card{
+      padding:30px 28px;
+      min-height:auto;
+      height:auto;
     }
 
-    .card {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: 28px;
+    .eyebrow{
+      font-size:14px;
+      font-weight:700;
+      color:#0d693b;
+      text-transform:uppercase;
+      letter-spacing:.04em;
+      margin-bottom:10px;
     }
 
-    .card + .card { margin-top: 20px; }
-
-    .section-label {
-      color: var(--green-dark);
-      font-weight: 700;
-      letter-spacing: 0.02em;
-      text-transform: uppercase;
-      font-size: 0.83rem;
-      margin-bottom: 8px;
+    h1{
+      font-size:clamp(28px, 4vw, 44px);
+      line-height:1.1;
+      margin-bottom:14px;
     }
 
-    .muted { color: var(--muted); }
-
-    form { display: grid; gap: 22px; }
-
-    .progress-wrap { display: grid; gap: 10px; }
-    .progress-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 12px;
-      color: var(--muted);
-      font-size: 0.95rem;
-      font-weight: 700;
+    .intro{
+      font-size:18px;
+      color:var(--muted);
+      margin-bottom:22px;
     }
 
-    .progress-bar {
-      width: 100%;
-      height: 10px;
-      background: #e7edf3;
-      border-radius: 999px;
-      overflow: hidden;
+    .notice{
+      background:#f6fbf7;
+      border:1px solid #d7eadb;
+      color:#1a653b;
+      padding:14px 16px;
+      border-radius:16px;
+      font-size:15px;
+      margin-bottom:26px;
     }
 
-    .progress-fill {
-      width: 0;
-      height: 100%;
-      background: linear-gradient(135deg, var(--green) 0%, var(--green-dark) 100%);
-      border-radius: 999px;
-      transition: width 0.25s ease;
+    .progress-wrap{
+      margin-bottom:28px;
     }
 
-    .step-card {
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 24px;
-      background: linear-gradient(180deg, #ffffff 0%, #fbfdfc 100%);
-      min-height: 360px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      gap: 20px;
+    .progress-label{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:12px;
+      font-size:14px;
+      font-weight:700;
+      margin-bottom:10px;
+      color:#24425f;
     }
 
-    .step-panel { display: none; }
-    .step-panel.active { display: block; }
-
-    .step-tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: var(--green-soft);
-      color: var(--green-dark);
-      border: 1px solid #d6ecd9;
-      border-radius: 999px;
-      padding: 8px 12px;
-      font-size: 0.84rem;
-      font-weight: 700;
-      margin-bottom: 16px;
+    .progress-bar{
+      width:100%;
+      height:10px;
+      background:#e7edf3;
+      border-radius:999px;
+      overflow:hidden;
     }
 
-    .step-title {
-      font-size: clamp(1.35rem, 2.1vw, 2rem);
-      margin-bottom: 10px;
+    .progress-fill{
+      height:100%;
+      width:12.5%;
+      background:linear-gradient(90deg, #178245, #28a85c);
+      border-radius:999px;
+      transition:width .25s ease;
     }
 
-    .step-desc {
-      color: var(--muted);
-      margin: 0 0 16px;
-      max-width: 680px;
+    .step{
+      display:none;
+      animation:fade .22s ease;
     }
 
-    .field,
-    .choice { display: grid; gap: 8px; }
+    .step.active{
+      display:block;
+    }
 
-    label { font-weight: 700; font-size: 0.97rem; }
-    .required::after { content: " *"; color: var(--danger); }
+    @keyframes fade{
+      from{
+        opacity:0;
+        transform:translateY(8px);
+      }
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
 
-    .hint {
-      margin-top: -3px;
-      font-size: 0.9rem;
-      color: var(--muted);
-      font-weight: 400;
+    .step-title{
+      font-size:28px;
+      line-height:1.15;
+      margin-bottom:10px;
+    }
+
+    .step-subtitle{
+      color:var(--muted);
+      font-size:16px;
+      margin-bottom:22px;
+    }
+
+    .field{
+      margin-bottom:18px;
+    }
+
+    .field label{
+      display:block;
+      font-size:15px;
+      font-weight:700;
+      margin-bottom:8px;
+      color:#18314f;
+    }
+
+    .field small{
+      display:block;
+      color:#738296;
+      margin-top:7px;
+      font-size:13px;
     }
 
     input,
-    textarea {
-      width: 100%;
-      border: 1px solid #cfd7e3;
-      background: #fbfcfe;
-      color: var(--text);
-      border-radius: 14px;
-      padding: 16px 18px;
-      font-size: 1rem;
-      outline: none;
-      transition: 0.2s ease;
+    textarea,
+    select{
+      width:100%;
+      border:1px solid #cfd9e3;
+      background:#fff;
+      color:#16304d;
+      border-radius:14px;
+      padding:16px 16px;
+      font-size:16px;
+      outline:none;
+      transition:border-color .2s ease, box-shadow .2s ease;
     }
 
     input:focus,
-    textarea:focus {
-      border-color: var(--green);
-      box-shadow: 0 0 0 4px rgba(31, 141, 86, 0.12);
-      background: var(--white);
+    textarea:focus,
+    select:focus{
+      border-color:#2a8d50;
+      box-shadow:0 0 0 4px rgba(31, 138, 76, .12);
     }
 
-    textarea {
-      min-height: 260px;
-      resize: vertical;
+    textarea{
+      min-height:220px;
+      resize:vertical;
     }
 
-    .example-box {
-      margin-top: 14px;
-      background: #f7fafc;
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 16px;
-      color: var(--muted);
-      white-space: pre-line;
-      font-size: 0.93rem;
+    .choice-list{
+      display:grid;
+      gap:12px;
+      margin-top:10px;
     }
 
-    .radio-grid {
-      display: grid;
-      gap: 12px;
-      margin-top: 6px;
+    .choice{
+      display:flex;
+      gap:12px;
+      align-items:flex-start;
+      padding:16px;
+      border:1px solid #d7e0e8;
+      border-radius:16px;
+      cursor:pointer;
+      transition:.2s ease;
+      background:#fff;
     }
 
-    .option {
-      display: flex;
-      gap: 12px;
-      align-items: flex-start;
-      padding: 14px 16px;
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      background: #fbfcff;
+    .choice:hover{
+      border-color:#9dcdb1;
+      background:#fbfefc;
     }
 
-    .option input {
-      width: 18px;
-      height: 18px;
-      margin-top: 2px;
-      accent-color: var(--green);
-      box-shadow: none;
-      padding: 0;
+    .choice input{
+      width:auto;
+      margin-top:3px;
+      transform:scale(1.15);
     }
 
-    .option span {
-      display: block;
-      font-weight: 700;
+    .choice span{
+      font-size:16px;
+      color:#213b58;
+      font-weight:600;
     }
 
-    .option small {
-      display: block;
-      color: var(--muted);
-      margin-top: 2px;
-      font-size: 0.88rem;
+    .actions{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+      margin-top:26px;
+      flex-wrap:wrap;
     }
 
-    .checkbox-field {
-      display: flex;
-      gap: 12px;
-      align-items: flex-start;
-      background: var(--green-soft);
-      border: 1px solid #d0ebd9;
-      padding: 16px;
-      border-radius: 14px;
-      margin-top: 16px;
+    .btn{
+      appearance:none;
+      border:none;
+      border-radius:14px;
+      padding:16px 24px;
+      font-size:17px;
+      font-weight:700;
+      cursor:pointer;
+      transition:.2s ease;
+      text-decoration:none;
     }
 
-    .checkbox-field input {
-      width: 18px;
-      height: 18px;
-      margin-top: 3px;
-      accent-color: var(--green);
-      box-shadow: none;
-      padding: 0;
+    .btn-secondary{
+      background:#e8edf2;
+      color:#16304d;
     }
 
-    .step-actions {
-      display: flex;
-      justify-content: space-between;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-top: 8px;
+    .btn-secondary:hover{
+      background:#dde5ec;
     }
 
-    .btn,
-    .btn-secondary {
-      border: 0;
-      border-radius: 14px;
-      font-size: 1rem;
-      font-weight: 700;
-      cursor: pointer;
-      transition: transform 0.15s ease, filter 0.2s ease, opacity 0.2s ease;
-      min-height: 54px;
-      padding: 0 22px;
+    .btn-primary{
+      background:var(--green);
+      color:#fff;
+      min-width:260px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      margin-left:auto;
     }
 
-    .btn {
-      background: linear-gradient(135deg, var(--green) 0%, var(--green-dark) 100%);
-      color: var(--white);
-      flex: 1 1 220px;
+    .btn-primary:hover{
+      background:var(--green-dark);
     }
 
-    .btn-secondary {
-      background: #eef3f8;
-      color: var(--text);
-      border: 1px solid #d8e0e8;
-      flex: 0 1 150px;
+    .btn-submit{
+      background:linear-gradient(180deg, #1f8a4c, #17733e);
+      color:#fff;
+      min-width:290px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      margin-left:auto;
     }
 
-    .btn:hover,
-    .btn-secondary:hover { filter: brightness(1.03); }
-    .btn:active,
-    .btn-secondary:active { transform: translateY(1px); }
-
-    .submit-button {
-      font-size: 1.05rem;
-      min-height: 60px;
-      box-shadow: 0 14px 28px rgba(18, 101, 61, 0.18);
+    .btn-submit:hover{
+      transform:translateY(-1px);
+      filter:brightness(.98);
     }
 
-    .small-note {
-      font-size: 0.92rem;
-      color: var(--muted);
-      margin-top: 10px;
+    .side{
+      display:grid;
+      gap:22px;
+      align-self:start;
     }
 
-    .info-list,
-    .rules-list {
-      margin: 0;
-      padding-left: 20px;
-      display: grid;
-      gap: 10px;
+    .side-card{
+      padding:28px;
     }
 
-    .pill-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 16px;
+    .side-card h3{
+      font-size:24px;
+      line-height:1.15;
+      margin-bottom:14px;
     }
 
-    .pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: var(--blue-soft);
-      color: var(--blue);
-      border: 1px solid #dfe4ff;
-      border-radius: 999px;
-      padding: 10px 14px;
-      font-size: 0.93rem;
-      font-weight: 700;
+    .side-card p{
+      color:var(--muted);
+      font-size:16px;
+      margin-bottom:14px;
     }
 
-    details {
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      background: #fcfdff;
-      overflow: hidden;
+    .side-card ul{
+      padding-left:20px;
+      color:#203956;
+      display:grid;
+      gap:12px;
     }
 
-    details + details { margin-top: 14px; }
-
-    summary {
-      list-style: none;
-      cursor: pointer;
-      padding: 18px 20px;
-      font-weight: 700;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 14px;
+    .whatsapp-btn{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      width:100%;
+      background:#25D366;
+      color:#fff;
+      text-decoration:none;
+      padding:18px 20px;
+      border-radius:18px;
+      font-size:18px;
+      font-weight:700;
+      margin-top:10px;
+      transition:.2s ease;
     }
 
-    summary::-webkit-details-marker { display: none; }
-
-    .details-body {
-      padding: 0 20px 20px;
-      color: var(--text);
+    .whatsapp-btn:hover{
+      background:#1ebe5d;
+      transform:translateY(-1px);
     }
 
-    .contact-box {
-      background: linear-gradient(135deg, var(--blue) 0%, #2f3ba0 100%);
-      color: var(--white);
-      border-radius: 18px;
-      padding: 18px;
-      margin-top: 16px;
+    .regulamento{
+      margin-top:22px;
+      padding:30px 28px;
     }
 
-    .contact-box p { margin: 8px 0 0; opacity: 0.96; }
-    .footer-note { margin-top: 16px; font-size: 0.88rem; color: var(--muted); }
-
-    @media (max-width: 960px) {
-      .grid { grid-template-columns: 1fr; }
+    .regulamento h2{
+      font-size:32px;
+      line-height:1.1;
+      margin-bottom:18px;
     }
 
-    @media (max-width: 720px) {
-      .container { width: min(calc(100% - 20px), var(--max)); }
-      .top-card, .card { padding: 20px; }
-      .hero { padding-top: 10px; }
-      .banner { border-radius: 18px; }
-      .top-card { border-radius: 0 0 18px 18px; }
-      .step-card { min-height: auto; padding: 20px; }
-      textarea { min-height: 220px; }
-      .step-actions { flex-direction: column-reverse; }
-      .btn, .btn-secondary { width: 100%; }
+    .regulamento h3{
+      margin-top:22px;
+      margin-bottom:8px;
+      font-size:21px;
+    }
+
+    .regulamento p,
+    .regulamento li{
+      color:#2c4260;
+      font-size:16px;
+    }
+
+    .regulamento ul{
+      padding-left:22px;
+      display:grid;
+      gap:8px;
+      margin-top:10px;
+    }
+
+    .regulamento .block{
+      margin-bottom:16px;
+    }
+
+    .footer-image{
+      margin-top:32px;
+      width:100%;
+      background:#d6d6c2;
+    }
+
+    .footer-image img{
+      width:100%;
+      display:block;
+    }
+
+    .hidden{
+      display:none !important;
+    }
+
+    @media (max-width: 980px){
+      .grid{
+        grid-template-columns:1fr;
+      }
+
+      .side{
+        order:2;
+      }
+
+      .form-area{
+        order:1;
+      }
+    }
+
+    @media (max-width: 640px){
+      .container{
+        width:min(100% - 20px, var(--max));
+        margin-top:14px;
+      }
+
+      .form-card,
+      .regulamento,
+      .side-card{
+        padding:22px 18px;
+        border-radius:20px;
+      }
+
+      .step-title{
+        font-size:24px;
+      }
+
+      .intro{
+        font-size:16px;
+      }
+
+      .actions{
+        flex-direction:column-reverse;
+        align-items:stretch;
+      }
+
+      .btn-primary,
+      .btn-submit,
+      .btn-secondary{
+        width:100%;
+        min-width:auto;
+        margin-left:0;
+      }
+
+      .choice span{
+        font-size:15px;
+      }
     }
   </style>
 </head>
 <body>
-  <header class="hero">
-    <div class="container">
-      <div class="banner">
-        <picture>
-          <source media="(max-width: 768px)" srcset="assets/mobile-banner.webp" />
-          <img src="assets/desktop-banner.webp" alt="Banner da Copa Luiz Neto de Futsal" />
-        </picture>
-      </div>
-      <div class="top-card">
-        <div class="eyebrow">⚽ Inscrição oficial</div>
-        <h1>Copa Luiz Neto de Futsal</h1>
-        <p class="lead">
-          A Copa Luiz Neto de Futebol masculino surgiu por iniciativa dos amigos do vereador Luiz Neto para promover o acesso ao esporte de forma gratuita e inclusiva em todas as regiões da cidade de Maringá. Confira o regulamento no fim desta página.
-        </p>
-        <div class="warning-box">
-          <strong>LEIA O REGULAMENTO E FAÇA SUA INSCRIÇÃO! ✅</strong>
-          <span>Agora o preenchimento acontece de forma guiada, uma etapa por vez, para ficar mais leve e intuitivo.</span>
-        </div>
-      </div>
-    </div>
-  </header>
+  <div class="page">
 
-  <main class="main">
-    <div class="container">
+    <header class="hero">
+      <picture>
+        <source media="(max-width: 768px)" srcset="assets/mobile-banner.webp">
+        <img src="assets/desktop-banner.webp" alt="Copa Luiz Neto de Futsal 2025">
+      </picture>
+    </header>
+
+    <main class="container">
       <div class="grid">
-        <section>
-          <div class="card">
-            <div class="section-label">Formulário</div>
-            <h2>Inscreva seu time</h2>
-            <p class="muted">
-              Preencha uma informação por vez. Isso evita rolagem longa e deixa a inscrição mais fácil para quem está no celular.
+        <section class="form-area">
+          <div class="card form-card">
+            <div class="eyebrow">Inscrição oficial</div>
+            <h1>Copa Luiz Neto de Futsal 2025 ⚽</h1>
+            <p class="intro">
+              Faça a inscrição do seu time de forma simples. Preencha etapa por etapa e, ao final,
+              confirme o envio da inscrição.
             </p>
 
-            <form id="inscricao-form">
-              <div class="progress-wrap">
-                <div class="progress-top">
-                  <span id="step-counter">Etapa 1 de 7</span>
-                  <span id="step-title-mini">Nome do time</span>
-                </div>
-                <div class="progress-bar">
-                  <div class="progress-fill" id="progress-fill"></div>
+            <div class="notice">
+              Leia o regulamento no fim da página antes de concluir. Os campos foram organizados em etapas
+              para facilitar o preenchimento e evitar rolagem cansativa.
+            </div>
+
+            <div class="progress-wrap">
+              <div class="progress-label">
+                <span id="progressText">Etapa 1 de 8</span>
+                <span id="progressPercent">12%</span>
+              </div>
+              <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+              </div>
+            </div>
+
+            <form id="inscricaoForm">
+
+              <div class="step active">
+                <h2 class="step-title">Nome do time</h2>
+                <p class="step-subtitle">
+                  Informe o nome do time. Nomes ofensivos não são permitidos.
+                </p>
+
+                <div class="field">
+                  <label for="nomeTime">Nome do time</label>
+                  <input type="text" id="nomeTime" name="nomeTime" placeholder="Ex.: Os Top do Jogo" />
                 </div>
               </div>
 
-              <div class="step-card">
-                <div class="step-panel active" data-step="1" data-title="Nome do time">
-                  <div class="step-tag">Etapa 1</div>
-                  <h3 class="step-title">Qual é o nome do seu time?</h3>
-                  <p class="step-desc">Nomes ofensivos não são permitidos.</p>
-                  <div class="field">
-                    <label for="nome-time" class="required">Nome do time</label>
-                    <div class="hint">Ex.: Os Top do Jogo</div>
-                    <input id="nome-time" name="nome_time" type="text" placeholder="Ex.: Os Top do Jogo" required />
-                  </div>
-                </div>
+              <div class="step">
+                <h2 class="step-title">Responsável pelo time</h2>
+                <p class="step-subtitle">
+                  Apenas uma pessoa com 18 anos ou mais deve ser cadastrada como responsável.
+                </p>
 
-                <div class="step-panel" data-step="2" data-title="Responsável pelo time">
-                  <div class="step-tag">Etapa 2</div>
-                  <h3 class="step-title">Quem será o responsável pelo time?</h3>
-                  <p class="step-desc">Informe apenas uma pessoa com 18 anos ou mais.</p>
-                  <div class="field">
-                    <label for="responsavel" class="required">Nome completo do responsável</label>
-                    <input id="responsavel" name="responsavel" type="text" placeholder="Nome completo do responsável" required />
-                  </div>
+                <div class="field">
+                  <label for="responsavel">Nome completo do responsável</label>
+                  <input type="text" id="responsavel" name="responsavel" placeholder="Nome completo do responsável" />
                 </div>
+              </div>
 
-                <div class="step-panel" data-step="3" data-title="Contato do responsável">
-                  <div class="step-tag">Etapa 3</div>
-                  <h3 class="step-title">Qual é o telefone de contato?</h3>
-                  <p class="step-desc">Use um número com acesso a WhatsApp.</p>
-                  <div class="field">
-                    <label for="telefone" class="required">Telefone de contato do responsável</label>
-                    <div class="hint">Ex.: (44) 9 9999-9999</div>
-                    <input id="telefone" name="telefone" type="tel" placeholder="(44) 9 9999-9999" required />
-                  </div>
+              <div class="step">
+                <h2 class="step-title">Telefone de contato</h2>
+                <p class="step-subtitle">
+                  Informe um número com acesso a WhatsApp.
+                </p>
+
+                <div class="field">
+                  <label for="telefoneResponsavel">Telefone do responsável</label>
+                  <input type="text" id="telefoneResponsavel" name="telefoneResponsavel" placeholder="(44) 9 9999-9999" />
                 </div>
+              </div>
 
-                <div class="step-panel" data-step="4" data-title="Endereço do responsável">
-                  <div class="step-tag">Etapa 4</div>
-                  <h3 class="step-title">Agora informe o endereço do responsável</h3>
-                  <p class="step-desc">Preencha o CEP e o endereço completo.</p>
-                  <div class="field" style="margin-bottom: 14px;">
-                    <label for="cep" class="required">CEP do responsável</label>
-                    <div class="hint">Ex.: 87000-000</div>
-                    <input id="cep" name="cep" type="text" placeholder="87000-000" required />
-                  </div>
-                  <div class="field">
-                    <label for="endereco" class="required">Endereço do responsável</label>
-                    <div class="hint">Rua, número, bairro, cidade</div>
-                    <input id="endereco" name="endereco" type="text" placeholder="Rua, número, bairro, cidade" required />
-                  </div>
+              <div class="step">
+                <h2 class="step-title">CEP do responsável</h2>
+                <p class="step-subtitle">
+                  Preencha o CEP do responsável pelo time.
+                </p>
+
+                <div class="field">
+                  <label for="cepResponsavel">CEP</label>
+                  <input type="text" id="cepResponsavel" name="cepResponsavel" placeholder="87000-000" />
                 </div>
+              </div>
 
-                <div class="step-panel" data-step="5" data-title="Membros do time">
-                  <div class="step-tag">Etapa 5</div>
-                  <h3 class="step-title">Inscreva todos os membros do time</h3>
-                  <p class="step-desc">Repita jogador por jogador, incluindo técnico e demais membros da equipe.</p>
-                  <div class="field">
-                    <label for="jogadores" class="required">Lista completa dos membros</label>
-                    <div class="hint">Repita para cada membro: nome do time, nome completo, telefone, data de nascimento, documento, endereço completo e CEP.</div>
-                    <textarea id="jogadores" name="jogadores" placeholder="Os Top do Jogo&#10;Arthur Silva&#10;(44) 9 9999-9999&#10;01/01/1980&#10;RG 123456789-1&#10;Rua das Casas, 123, Jardim Cidade&#10;CEP: 87000-001&#10;&#10;Repita jogador por jogador." required></textarea>
-                  </div>
-                  <div class="example-box">Exemplo:
+              <div class="step">
+                <h2 class="step-title">Endereço do responsável</h2>
+                <p class="step-subtitle">
+                  Informe rua, número, bairro e cidade.
+                </p>
+
+                <div class="field">
+                  <label for="enderecoResponsavel">Endereço completo</label>
+                  <input type="text" id="enderecoResponsavel" name="enderecoResponsavel" placeholder="Rua, número, bairro, cidade" />
+                </div>
+              </div>
+
+              <div class="step">
+                <h2 class="step-title">Inscrição de todos os membros do time</h2>
+                <p class="step-subtitle">
+                  Repita para cada membro: nome do time, nome completo, telefone, data de nascimento,
+                  tipo e número do documento, endereço completo e CEP.
+                </p>
+
+                <div class="field">
+                  <label for="membrosTime">Lista de membros do time</label>
+                  <textarea id="membrosTime" name="membrosTime" placeholder="Exemplo:
+
 Os Top do Jogo
 Arthur Silva
 (44) 9 9999-9999
@@ -551,384 +587,296 @@ RG 123456789-1
 Rua das Casas, 123, Jardim Cidade
 CEP: 87000-001
 
-Repita jogador por jogador.</div>
+Repita jogador por jogador."></textarea>
+                  <small>Insira técnico e jogadores. Não há limite de membros cadastrados no formulário.</small>
                 </div>
+              </div>
 
-                <div class="step-panel" data-step="6" data-title="Dia do jogo">
-                  <div class="step-tag">Etapa 6</div>
-                  <h3 class="step-title">Escolha o dia do seu jogo 🎯</h3>
-                  <p class="step-desc">Os times que conquistarem o 1º e 2º lugar em qualquer um desses locais da primeira etapa estarão classificados para a fase final.</p>
-                  <div class="radio-grid">
-                    <label class="option">
-                      <input type="radio" name="dia_jogo" value="CONJUNTO PAULISTA - 28/09 (MUDANÇA 05/10)" required />
-                      <div>
-                        <span>CONJUNTO PAULISTA - 28/09</span>
-                        <small>Mudança para 05/10</small>
-                      </div>
-                    </label>
-                    <label class="option">
-                      <input type="radio" name="dia_jogo" value="JARDIM ALVORADA - 19/10" />
-                      <div>
-                        <span>JARDIM ALVORADA - 19/10</span>
-                      </div>
-                    </label>
-                    <label class="option">
-                      <input type="radio" name="dia_jogo" value="SÃO SILVESTRE OU CATEDRAL - 09/11" />
-                      <div>
-                        <span>SÃO SILVESTRE OU CATEDRAL - 09/11</span>
-                      </div>
-                    </label>
-                    <label class="option">
-                      <input type="radio" name="dia_jogo" value="BORBA GATO - 23/11" />
-                      <div>
-                        <span>BORBA GATO - 23/11</span>
-                      </div>
-                    </label>
-                  </div>
+              <div class="step">
+                <h2 class="step-title">Escolha o dia do seu jogo 🎯</h2>
+                <p class="step-subtitle">
+                  Os times que conquistarem o 1º e 2º lugar em qualquer um desses locais da primeira etapa
+                  estarão classificados para a fase final.
+                </p>
+
+                <div class="choice-list">
+                  <label class="choice">
+                    <input type="radio" name="diaJogo" value="Conjunto Paulista - 28/09 (Mudança para 05/10)">
+                    <span>CONJUNTO PAULISTA - 28/09 <br><small>Mudança para 05/10</small></span>
+                  </label>
+
+                  <label class="choice">
+                    <input type="radio" name="diaJogo" value="Jardim Alvorada - 19/10">
+                    <span>JARDIM ALVORADA - 19/10</span>
+                  </label>
+
+                  <label class="choice">
+                    <input type="radio" name="diaJogo" value="São Silvestre ou Catedral - 09/11">
+                    <span>SÃO SILVESTRE OU CATEDRAL - 09/11</span>
+                  </label>
+
+                  <label class="choice">
+                    <input type="radio" name="diaJogo" value="Borba Gato - 23/11">
+                    <span>BORBA GATO - 23/11</span>
+                  </label>
                 </div>
+              </div>
 
-                <div class="step-panel" data-step="7" data-title="Confirmação final">
-                  <div class="step-tag">Etapa 7</div>
-                  <h3 class="step-title">Finalize sua inscrição</h3>
-                  <p class="step-desc">Revise se os dados estão corretos e confirme que leu o regulamento oficial.</p>
-                  <label class="checkbox-field">
-                    <input type="checkbox" name="aceite" required />
+              <div class="step">
+                <h2 class="step-title">Confirmação final</h2>
+                <p class="step-subtitle">
+                  Antes de enviar, confirme que leu e concorda com todas as regras do regulamento oficial.
+                </p>
+
+                <div class="choice-list">
+                  <label class="choice">
+                    <input type="checkbox" id="aceiteRegulamento" name="aceiteRegulamento">
                     <span>Li e concordo com todas as regras do regulamento oficial da Copa Luiz Neto de Futebol de Salão – Edição 2025.</span>
                   </label>
-                  <div class="small-note">Ao clicar no botão abaixo, a inscrição será enviada quando este formulário estiver conectado a um serviço de recebimento.</div>
                 </div>
+              </div>
 
-                <div class="step-actions">
-                  <button type="button" class="btn-secondary" id="prev-btn" style="visibility: hidden;">Voltar</button>
-                  <button type="button" class="btn" id="next-btn">Continuar inscrição</button>
-                  <button type="submit" class="btn submit-button" id="submit-btn" style="display: none;">✅ Confirmar e enviar inscrição</button>
-                </div>
+              <div class="actions">
+                <button type="button" class="btn btn-secondary hidden" id="prevBtn">Voltar</button>
+                <button type="button" class="btn btn-primary" id="nextBtn">Continuar inscrição</button>
+                <button type="submit" class="btn btn-submit hidden" id="submitBtn">✅ Confirmar e enviar inscrição</button>
               </div>
             </form>
           </div>
+
+          <div class="card regulamento">
+            <div class="eyebrow">Regulamento oficial</div>
+            <h2>Copa Luiz Neto de Futebol de Salão – Edição 2025</h2>
+
+            <div class="block">
+              <h3>1. Apresentação</h3>
+              <p>
+                A Copa Luiz Neto de Futsal surgiu por iniciativa dos amigos do vereador Luiz Neto,
+                com o objetivo de promover o acesso gratuito e inclusivo ao esporte em todas as regiões da cidade de Maringá.
+              </p>
+              <p>
+                Nesta edição, o evento será realizado na modalidade masculina, e contará com o apoio e apadrinhamento
+                de Walter Guerles, ex-vereador, atleta e um dos idealizadores da primeira grande competição esportiva da cidade.
+              </p>
+              <p>
+                A Copa tem como missão fomentar o esporte amador, integrar os bairros de Maringá e revelar novos talentos,
+                promovendo valores como respeito, disciplina e solidariedade.
+              </p>
+            </div>
+
+            <div class="block">
+              <h3>2. Formato da competição</h3>
+              <p><strong>2.1. Fases da Competição</strong></p>
+              <ul>
+                <li>Fase 1 – Etapa de Origem (Classificatória): acontecerá no bairro ou região escolhida no momento da inscrição.</li>
+                <li>Os 1º e 2º colocados de cada bairro avançam para a próxima fase.</li>
+                <li>Fase 2 – Etapa Final (Regional): os classificados disputarão a fase final, em local a ser definido pela organização.</li>
+              </ul>
+              <p style="margin-top:12px;"><strong>2.2. Participação em outras etapas</strong></p>
+              <ul>
+                <li>Equipes não classificadas em sua etapa de origem poderão se inscrever em outras etapas, desde que haja vagas disponíveis.</li>
+                <li>A prioridade será dada às equipes da própria região.</li>
+              </ul>
+            </div>
+
+            <div class="block">
+              <h3>3. Inscrições</h3>
+              <ul>
+                <li>A inscrição será feita mediante a doação de um litro de leite por cada participante inscrito no time.</li>
+                <li>Permitida para jogadores maringaenses a partir dos 16 anos.</li>
+                <li>Cada equipe deverá preencher integralmente o formulário de inscrição oficial.</li>
+                <li>Todos os jogadores devem apresentar documento com foto no dia do jogo.</li>
+                <li>Inscrições dos times para a rodada de origem devem ser feitas pelo responsável do time via formulário.</li>
+              </ul>
+
+              <p style="margin-top:12px;"><strong>3.1. Inscrição de Times e Inclusão de Atletas na Primeira Fase</strong></p>
+              <p>
+                As inscrições dos times para a etapa de origem deverão ser realizadas exclusivamente
+                pelo responsável da equipe, por meio do formulário oficial disponibilizado pela organização.
+              </p>
+
+              <p style="margin-top:12px;"><strong>3.2. Número de Atletas por Equipe</strong></p>
+              <p>
+                A inscrição de atletas é ilimitada por equipe. Contudo, para cada jogo,
+                somente 14 atletas poderão ser relacionados na súmula, conforme as regras da CBFS.
+              </p>
+
+              <p style="margin-top:12px;"><strong>3.3. Inclusão de Atletas Não Cadastrados</strong></p>
+              <ul>
+                <li>Via WhatsApp, até a sexta-feira que antecede o jogo, pelo número oficial da organização.</li>
+                <li>Presencialmente, no local da competição, antes do início da rodada, às 8h00.</li>
+                <li>O atleta só será incluído se forem fornecidas corretamente todas as informações exigidas no formulário.</li>
+              </ul>
+
+              <p style="margin-top:12px;"><strong>3.4. Participação de Menores de 18 Anos</strong></p>
+              <ul>
+                <li>Menores de idade só poderão participar com autorização assinada por responsável legal.</li>
+                <li>Também deverão ser entregues cópias dos documentos do menor e do responsável.</li>
+                <li>A ausência desses documentos implicará na desclassificação da equipe.</li>
+              </ul>
+            </div>
+
+            <div class="block">
+              <h3>4. Regras gerais</h3>
+              <ul>
+                <li>A competição seguirá as regras da CBFS.</li>
+                <li>Tempo de jogo: 2 tempos de 10 minutos corridos, sem intervalo.</li>
+                <li>Serão permitidas substituições livres, conforme as normas do futsal.</li>
+                <li>Haverá tolerância máxima de 15 minutos após o horário marcado para início da competição na primeira fase.</li>
+                <li>Após esse tempo, a equipe ausente será considerada derrotada por W.O.</li>
+              </ul>
+            </div>
+
+            <div class="block">
+              <h3>5. Disciplina e conduta</h3>
+              <ul>
+                <li>É obrigatório manter a boa conduta dentro e fora de quadra.</li>
+                <li>Será desclassificada a equipe que cometer agressões físicas ou verbais contra árbitros, adversários ou organização.</li>
+                <li>Também serão punidas atitudes antiesportivas, desrespeitosas ou uso de jogador irregular.</li>
+              </ul>
+            </div>
+
+            <div class="block">
+              <h3>6. Arbitragem e organização</h3>
+              <p>
+                A arbitragem será realizada por profissionais indicados pela organização.
+                A reunião arbitral será realizada em data previamente marcada, com presença obrigatória
+                dos representantes de todos os times homologados.
+              </p>
+            </div>
+
+            <div class="block">
+              <h3>7. Premiações</h3>
+              <ul>
+                <li>Etapa de origem: 1º lugar e 2º lugar recebem troféu + medalhas.</li>
+                <li>Etapa final: 1º lugar geral e 2º lugar geral recebem troféu + medalhas.</li>
+                <li>Premiações individuais: melhor goleiro, artilheiro, destaque da competição e melhor técnico.</li>
+              </ul>
+            </div>
+
+            <div class="block">
+              <h3>8. Solidariedade</h3>
+              <p>
+                A inscrição é gratuita, porém, para participar dos jogos, cada membro do time deverá levar
+                1 litro de leite longa vida por rodada, que será doado a entidades assistenciais da cidade de Maringá.
+              </p>
+            </div>
+
+            <div class="block">
+              <h3>9. Documentação obrigatória no dia do jogo</h3>
+              <ul>
+                <li>Documento oficial com foto.</li>
+                <li>Lista oficial de jogadores previamente enviada no formulário.</li>
+                <li>Autorização e documentos, caso haja menores de idade na equipe.</li>
+              </ul>
+            </div>
+
+            <div class="block">
+              <h3>10. Disposições finais</h3>
+              <ul>
+                <li>A organização não se responsabiliza por acidentes, lesões ou perdas materiais durante a competição.</li>
+                <li>Casos omissos neste regulamento serão resolvidos pela comissão organizadora.</li>
+                <li>Dúvidas e informações adicionais devem ser direcionadas via WhatsApp no número (44) 9 9983-9462.</li>
+                <li>O que não estiver contemplado neste regulamento seguirá as regras da CBFS.</li>
+              </ul>
+            </div>
+          </div>
         </section>
 
-        <aside>
-          <div class="card">
-            <div class="section-label">Instruções</div>
-            <h2>Antes de preencher</h2>
-            <ul class="info-list">
-              <li>A inscrição é gratuita, mas cada participante deverá levar 1 litro de leite longa vida por rodada.</li>
-              <li>Permitida para jogadores maringaenses a partir dos 16 anos.</li>
-              <li>Todos os jogadores devem apresentar documento com foto no dia do jogo.</li>
-              <li>As inscrições da primeira fase devem ser feitas pelo responsável da equipe via formulário.</li>
-              <li>Não há limite de membros por time, porém apenas 14 atletas poderão ser relacionados na súmula de cada jogo.</li>
-            </ul>
-            <div class="pill-row">
-              <span class="pill">✅ Inscrição gratuita</span>
-              <span class="pill">📍 Maringá</span>
-              <span class="pill">📄 Documento com foto</span>
-              <span class="pill">🥛 1 litro de leite por rodada</span>
-            </div>
+        <aside class="side">
+          <div class="card side-card">
+            <div class="eyebrow">Contato</div>
+            <h3>Informações adicionais</h3>
+            <p>
+              Dúvidas e informações adicionais devem ser direcionadas via WhatsApp.
+            </p>
+
+            <a
+              class="whatsapp-btn"
+              href="https://wa.me/5544999839462?text=Ol%C3%A1!%20Quero%20tirar%20uma%20d%C3%BAvida%20sobre%20a%20Copa%20Luiz%20Neto%20de%20Futsal."
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              📱 Falar no WhatsApp
+            </a>
           </div>
 
-          <div class="card">
-            <div class="section-label">Contato</div>
-            <h2>Informações adicionais</h2>
-            <p class="muted">Dúvidas e informações adicionais devem ser direcionadas via WhatsApp.</p>
-            <div class="contact-box">
-              <strong>📱 (44) 9 9983-9462</strong>
-              <p>Organização da Copa Luiz Neto de Futsal</p>
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="section-label">Resumo do regulamento</div>
-            <h2>Pontos principais</h2>
-            <ul class="rules-list">
-              <li>Os 1º e 2º colocados de cada bairro avançam para a próxima fase.</li>
-              <li>Equipes não classificadas poderão se inscrever em outras etapas, se houver vagas.</li>
-              <li>Atletas não cadastrados podem ser incluídos por WhatsApp até a sexta-feira anterior ao jogo, ou presencialmente antes do início da rodada, às 8h.</li>
-              <li>Menores de 18 anos só poderão participar mediante autorização e documentos exigidos.</li>
-              <li>Haverá tolerância máxima de 15 minutos para início da competição na primeira fase.</li>
-              <li>A equipe ausente após esse prazo será considerada derrotada por W.O.</li>
+          <div class="card side-card">
+            <div class="eyebrow">Resumo do regulamento</div>
+            <h3>Pontos principais</h3>
+            <ul>
+              <li>Os 1º e 2º colocados de cada etapa avançam para a próxima fase.</li>
+              <li>Equipes não classificadas poderão disputar outras etapas, se houver vagas.</li>
+              <li>Atletas não cadastrados poderão ser incluídos via WhatsApp até a sexta-feira anterior ao jogo.</li>
+              <li>Menores de 18 anos só podem participar com autorização e documentos.</li>
+              <li>Haverá tolerância máxima de 15 minutos na primeira fase.</li>
+              <li>A equipe ausente após esse prazo será derrotada por W.O.</li>
             </ul>
           </div>
         </aside>
       </div>
+    </main>
 
-      <section class="card" style="margin-top: 24px;">
-        <div class="section-label">🏆 Regulamento oficial</div>
-        <h2>Copa Luiz Neto de Futebol de Salão – Edição 2026</h2>
-        <p class="muted">Todas as informações abaixo foram incluídas no código conforme você pediu.</p>
-
-        <details open>
-          <summary>1. Apresentação</summary>
-          <div class="details-body">
-            <p>A Copa Luiz Neto de Futsal surgiu por iniciativa dos amigos do vereador Luiz Neto, com o objetivo de promover o acesso gratuito e inclusivo ao esporte em todas as regiões da cidade de Maringá.</p>
-            <p>Nesta edição, o evento será realizado na modalidade masculina, e contará com o apoio e apadrinhamento de Walter Guerles, ex-vereador, atleta e um dos idealizadores da primeira grande competição esportiva da cidade.</p>
-            <p>A Copa tem como missão fomentar o esporte amador, integrar os bairros de Maringá e revelar novos talentos, promovendo valores como respeito, disciplina e solidariedade.</p>
-          </div>
-        </details>
-
-        <details>
-          <summary>2. Formato da competição</summary>
-          <div class="details-body">
-            <h3>2.1. Fases da Competição</h3>
-            <p><strong>Fase 1 – Etapa de Origem (Classificatória):</strong><br>Acontecerá no bairro ou região escolhida no momento da inscrição. Os 1º e 2º colocados de cada bairro avançam para a próxima fase.</p>
-            <p><strong>Fase 2 – Etapa Final (Regional):</strong><br>Os classificados disputarão a fase final, em local a ser definido pela organização.</p>
-            <h3>2.2. Participação em Outras Etapas</h3>
-            <p>Equipes não classificadas em sua etapa de origem poderão se inscrever em outras etapas, desde que haja vagas disponíveis. A prioridade será dada às equipes da própria região.</p>
-          </div>
-        </details>
-
-        <details>
-          <summary>3. Inscrições</summary>
-          <div class="details-body">
-            <p>A inscrição será feita mediante a doação de um litro de leite por cada participante inscrito no time.</p>
-            <p>Permitida para jogadores maringaenses a partir dos 16 anos.</p>
-            <p>Cada equipe deverá preencher integralmente o formulário de inscrição oficial.</p>
-            <p>Todos os jogadores devem apresentar documento com foto no dia do jogo.</p>
-            <p>Inscrições dos times para a rodada de origem, ou seja, na primeira fase, devem ser feitas pelo responsável do time via formulário.</p>
-
-            <h3>3.1. Inscrição de Times e Inclusão de Atletas na Primeira Fase</h3>
-            <p>As inscrições dos times para a etapa de origem (primeira fase) deverão ser realizadas exclusivamente pelo responsável da equipe, por meio do formulário oficial disponibilizado pela organização.</p>
-
-            <h3>3.2. Número de Atletas por Equipe</h3>
-            <p>A inscrição de atletas é ilimitada por equipe, ou seja, o responsável pode cadastrar quantos jogadores desejar no formulário de inscrição.</p>
-            <p>Contudo, para cada jogo, somente 14 atletas poderão ser relacionados na súmula, conforme as regras da Confederação Brasileira de Futebol de Salão (CBFS).</p>
-
-            <h3>3.3. Inclusão de Atletas Não Cadastrados</h3>
-            <p>A inclusão de atletas que não foram previamente cadastrados no formulário deverá ser solicitada pelo responsável do time através de uma das seguintes opções:</p>
-            <ul class="info-list">
-              <li>Via WhatsApp, até a sexta-feira que antecede o jogo, pelo número oficial da organização;</li>
-              <li>Presencialmente, no local da competição, antes do início da rodada, às 8:00.</li>
-            </ul>
-            <p>Em ambos os casos, o atleta só será incluído se forem fornecidas corretamente todas as informações exigidas no formulário de inscrição:</p>
-            <ul class="info-list">
-              <li>Nome completo</li>
-              <li>Número do documento oficial com foto (RG, CPF ou CNH)</li>
-              <li>Endereço completo</li>
-              <li>CEP</li>
-              <li>Número de WhatsApp</li>
-            </ul>
-            <p><strong>Observação:</strong> A falta de qualquer uma dessas informações invalidará a solicitação de inclusão do atleta.</p>
-
-            <h3>3.4. Participação de Menores de 18 Anos</h3>
-            <p>Menores de idade só poderão participar com a entrega, antes do primeiro jogo, de:</p>
-            <ul class="info-list">
-              <li>Autorização assinada de próprio punho por um responsável legal, permitindo a participação no campeonato e se responsabilizando pela integridade física e quaisquer situações que possam vir a ocorrer. O documento deve conter:</li>
-            </ul>
-            <ul class="info-list">
-              <li>Nome completo do menor e número do documento (RG ou CPF)</li>
-              <li>Nome completo do responsável e número do documento</li>
-              <li>Assinatura do responsável (igual à do documento)</li>
-            </ul>
-            <ul class="info-list">
-              <li>Cópias dos documentos de identidade do menor e do responsável.</li>
-            </ul>
-            <p>A ausência desses documentos implicará na desclassificação da equipe.</p>
-          </div>
-        </details>
-
-        <details>
-          <summary>4. Regras gerais</summary>
-          <div class="details-body">
-            <h3>4.1. Regras Técnicas</h3>
-            <p>A competição seguirá as regras da Confederação Brasileira de Futebol de Salão (CBFS), com a seguinte exceção:</p>
-            <ul class="info-list">
-              <li>Tempo de jogo: 2 tempos de 10 minutos corridos, sem intervalo.</li>
-            </ul>
-
-            <h3>4.2. Substituições</h3>
-            <p>Serão permitidas substituições livres, conforme as normas do futsal.</p>
-
-            <h3>4.3. Atrasos e W.O.</h3>
-            <p>Será concedida tolerância máxima de 15 minutos após o horário marcado para início da competição na primeira fase.</p>
-            <p><strong>Exemplo:</strong> Se os jogos iniciarem às 8h00, o limite de tolerância será até as 8h15 para todas as equipes, independentemente do horário específico do jogo.</p>
-            <p>Após esse tempo, a equipe ausente será considerada derrotada por W.O.</p>
-          </div>
-        </details>
-
-        <details>
-          <summary>5. Disciplina e conduta</summary>
-          <div class="details-body">
-            <p>É obrigatório manter a boa conduta dentro e fora de quadra.</p>
-            <p>Será desclassificada a equipe que cometer:</p>
-            <ul class="info-list">
-              <li>Agressões físicas ou verbais contra árbitros, adversários ou organização</li>
-              <li>Atitudes antiesportivas ou desrespeitosas</li>
-              <li>Uso de jogador irregular (sem documentação ou fora da idade permitida)</li>
-            </ul>
-          </div>
-        </details>
-
-        <details>
-          <summary>6. Arbitragem e organização</summary>
-          <div class="details-body">
-            <p>A arbitragem será realizada por profissionais indicados pela organização.</p>
-            <p>A reunião arbitral será realizada em data previamente marcada, com presença obrigatória dos representantes de todos os times homologados.</p>
-          </div>
-        </details>
-
-        <details>
-          <summary>7. Premiações</summary>
-          <div class="details-body">
-            <h3>7.1. Etapa de Origem</h3>
-            <ul class="info-list">
-              <li>1º lugar: Troféu + medalhas</li>
-              <li>2º lugar: Troféu + medalhas</li>
-            </ul>
-
-            <h3>7.2. Etapa Final</h3>
-            <ul class="info-list">
-              <li>1º lugar geral: Troféu + medalhas</li>
-              <li>2º lugar geral: Troféu + medalhas</li>
-            </ul>
-
-            <h3>7.3. Premiações Individuais (na final geral)</h3>
-            <ul class="info-list">
-              <li>Melhor goleiro</li>
-              <li>Artilheiro da competição</li>
-              <li>Destaque da competição</li>
-              <li>Melhor técnico</li>
-            </ul>
-            <p>Todos receberão troféus e certificados de reconhecimento.</p>
-          </div>
-        </details>
-
-        <details>
-          <summary>8. Solidariedade</summary>
-          <div class="details-body">
-            <p>A inscrição é gratuita, porém, para participar dos jogos, cada membro do time deverá levar 1 litro de leite longa vida por rodada, que será doado a entidades assistenciais da cidade de Maringá.</p>
-          </div>
-        </details>
-
-        <details>
-          <summary>9. Documentação obrigatória no dia do jogo</summary>
-          <div class="details-body">
-            <ul class="info-list">
-              <li>Documento oficial com foto (RG, CNH, Carteira de Trabalho etc.)</li>
-              <li>Lista oficial de jogadores previamente enviada no formulário</li>
-              <li>Autorização e documentos (caso haja menores de idade na equipe)</li>
-            </ul>
-          </div>
-        </details>
-
-        <details>
-          <summary>10. Disposições finais</summary>
-          <div class="details-body">
-            <ul class="info-list">
-              <li>A organização não se responsabiliza por acidentes, lesões ou perdas materiais durante a competição.</li>
-              <li>Casos omissos neste regulamento serão resolvidos pela comissão organizadora, e suas decisões serão soberanas.</li>
-            </ul>
-            <p><strong>Dúvidas e informações adicionais:</strong> WhatsApp <strong>(44) 9 9983-9462</strong>.</p>
-            <p><strong>Observação final:</strong> O que não estiver contemplado neste regulamento seguirá as regras da Confederação Brasileira de Futebol de Salão (CBFS).</p>
-            <p><strong>ESTEJA ATENTO AO REGULAMENTO E BOM JOGO!</strong></p>
-          </div>
-        </details>
-
-        <p class="footer-note">Observação técnica: este HTML é estático e funciona normalmente no GitHub Pages. Para salvar as inscrições em planilha ou receber por e-mail, será necessário conectar um serviço de envio.</p>
-      </section>
-    </div>
-  </main>
+    <footer class="footer-image">
+      <img src="assets/rodape-apoio.png" alt="Apoio Copa Luiz Neto 2026">
+    </footer>
+  </div>
 
   <script>
-    const form = document.getElementById('inscricao-form');
-    const steps = Array.from(document.querySelectorAll('.step-panel'));
-    const prevBtn = document.getElementById('prev-btn');
-    const nextBtn = document.getElementById('next-btn');
-    const submitBtn = document.getElementById('submit-btn');
-    const progressFill = document.getElementById('progress-fill');
-    const stepCounter = document.getElementById('step-counter');
-    const stepTitleMini = document.getElementById('step-title-mini');
-
-    const phone = document.getElementById('telefone');
-    const cep = document.getElementById('cep');
+    const steps = document.querySelectorAll('.step');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const submitBtn = document.getElementById('submitBtn');
+    const progressFill = document.getElementById('progressFill');
+    const progressText = document.getElementById('progressText');
+    const progressPercent = document.getElementById('progressPercent');
 
     let currentStep = 0;
 
-    function maskPhone(value) {
-      value = value.replace(/\D/g, '').slice(0, 11);
-      if (value.length > 10) {
-        return value.replace(/(\d{2})(\d{1})(\d{4})(\d{0,4})/, '($1) $2 $3-$4');
-      } else if (value.length > 6) {
-        return value.replace(/(\d{2})(\d{4})(\d{0,4})/, '($1) $2-$3');
-      } else if (value.length > 2) {
-        return value.replace(/(\d{2})(\d{0,5})/, '($1) $2');
-      } else if (value.length > 0) {
-        return value.replace(/(\d{0,2})/, '($1');
-      }
-      return value;
-    }
-
-    function maskCep(value) {
-      value = value.replace(/\D/g, '').slice(0, 8);
-      if (value.length > 5) return value.replace(/(\d{5})(\d{0,3})/, '$1-$2');
-      return value;
-    }
-
-    phone.addEventListener('input', function () {
-      this.value = maskPhone(this.value);
-    });
-
-    cep.addEventListener('input', function () {
-      this.value = maskCep(this.value);
-    });
-
-    function getStepFields(stepEl) {
-      return Array.from(stepEl.querySelectorAll('input, textarea')).filter(field => field.type !== 'button' && field.type !== 'submit');
-    }
-
-    function validateStep(index) {
-      const fields = getStepFields(steps[index]);
-      let valid = true;
-
-      for (const field of fields) {
-        if (!field.checkValidity()) {
-          field.reportValidity();
-          valid = false;
-          break;
-        }
-      }
-
-      return valid;
-    }
-
-    function updateStep() {
+    function updateStep(){
       steps.forEach((step, index) => {
         step.classList.toggle('active', index === currentStep);
       });
 
-      const total = steps.length;
-      const progress = ((currentStep + 1) / total) * 100;
-      progressFill.style.width = progress + '%';
-      stepCounter.textContent = `Etapa ${currentStep + 1} de ${total}`;
-      stepTitleMini.textContent = steps[currentStep].dataset.title || `Etapa ${currentStep + 1}`;
+      prevBtn.classList.toggle('hidden', currentStep === 0);
+      nextBtn.classList.toggle('hidden', currentStep === steps.length - 1);
+      submitBtn.classList.toggle('hidden', currentStep !== steps.length - 1);
 
-      prevBtn.style.visibility = currentStep === 0 ? 'hidden' : 'visible';
+      const percent = Math.round(((currentStep + 1) / steps.length) * 100);
+      progressFill.style.width = percent + '%';
+      progressText.textContent = `Etapa ${currentStep + 1} de ${steps.length}`;
+      progressPercent.textContent = `${percent}%`;
 
-      const isLast = currentStep === total - 1;
-      nextBtn.style.display = isLast ? 'none' : 'inline-flex';
-      submitBtn.style.display = isLast ? 'inline-flex' : 'none';
+      window.scrollTo({
+        top: document.querySelector('.form-card').offsetTop - 10,
+        behavior: 'smooth'
+      });
     }
 
     nextBtn.addEventListener('click', () => {
-      if (!validateStep(currentStep)) return;
-      if (currentStep < steps.length - 1) {
-        currentStep += 1;
+      if(currentStep < steps.length - 1){
+        currentStep++;
         updateStep();
-        window.scrollTo({ top: form.offsetTop - 20, behavior: 'smooth' });
       }
     });
 
     prevBtn.addEventListener('click', () => {
-      if (currentStep > 0) {
-        currentStep -= 1;
+      if(currentStep > 0){
+        currentStep--;
         updateStep();
-        window.scrollTo({ top: form.offsetTop - 20, behavior: 'smooth' });
       }
     });
 
-    form.addEventListener('submit', function (event) {
-      event.preventDefault();
-      if (!validateStep(currentStep)) return;
-      alert('Formulário pronto visualmente. Para envio real das inscrições, conecte este HTML a um backend, Google Sheets ou FormSubmit.');
+    document.getElementById('inscricaoForm').addEventListener('submit', function(e){
+      e.preventDefault();
+
+      const aceitou = document.getElementById('aceiteRegulamento').checked;
+      if(!aceitou){
+        alert('Você precisa concordar com o regulamento antes de enviar a inscrição.');
+        return;
+      }
+
+      alert('Inscrição pronta para envio. Agora você pode integrar esse formulário com e-mail, WhatsApp ou Google Sheets.');
     });
 
     updateStep();
